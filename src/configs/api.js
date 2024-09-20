@@ -1,8 +1,9 @@
 import axios from "axios"
+import getEnv from "../utility/getEnv"
 
 
 const api = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: getEnv('VITE_SERVER_URL'),
 })
 //intercept request bfore going to server
 api.interceptors.request.use(
